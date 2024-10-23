@@ -1,0 +1,38 @@
+
+docker , docker-compose, podman , podman-compose install in arch linux
+
+
+1. Update the system
+
+First, ensure your system is up to date:
+
+sudo pacman -Syu
+sudo pacman -S docker
+
+sudo systemctl enable docker
+sudo systemctl start docker
+
+docker --version
+
+sudo pacman -S docker-compose
+docker-compose --version
+
+sudo pacman -S podman
+podman --version
+sudo pacman -S podman-compose 
+
+Podman Compose can be installed from the AUR (Arch User Repository):
+
+sudo pacman -S --needed git base-devel
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+
+Install podman-compose:
+
+bash
+
+yay -S podman-compose
+
+#######################################################################################################################
+
