@@ -34,6 +34,10 @@ bash
 
 yay -S podman-compose
 
+sudo systemctl enable podman
+sudo systemctl start podman
+
+
 #######################################################################################################################
 
 docker , docker compose install on ubuntu
