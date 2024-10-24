@@ -1,0 +1,13 @@
+########################################################################################
+Miniconda install for python virtual environment
+
+url -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh
+conda create -n modernai python=3.11
+cd /home/bheeshm/Miniconda3/bin/conda/
+./conda init
+./conda activate modernai
+conda deactivate 
+conda deactivate
+
+#########################################################################################
