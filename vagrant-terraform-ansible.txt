@@ -1,7 +1,40 @@
+The firefox & chrome extension to download all videos is called as :- Video DownloadHelper (available for Chrome and Firefox).
+extensions = ublock origin , new tab override
+
+#####################################################################################
 sudo pacman -S virtualbox
 ==> select option 1 of dkms for stock kernel normally , option 2 of arch host for lts and zen kernel 
 
 sudo pacman -S linux linux-headers
+==> then restart is mandatory as this completes the installation of the latest linux kernel
 
 
+#####################################################################################
+sudo pacman -S terraform
+sudo pacman -S ansible
+#####################################################################################
+
+
+
+https://support.broadcom.com/group/ecx/productfiles?subFamily=VMware%20Workstation%20Pro&displayGroup=VMware%20Workstation%20Pro%2017.0%20for%20Linux&release=17.6.2&os=&servicePk=526673&language=EN
+
+chmod +x VMware-Workstation-Full-*.bundle
+sudo ./VMware-Workstation-Full-*.bundle
+
+#####################################################################################
 pacman -S vagrant
+
+#####################################################################################
+
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+yay -S docker-desktop
+systemctl --user enable docker-desktop
+systemctl --user start docker-desktop
+docker-desktop
+
+#####################################################################################
+
+sudo pacman -S plasma-systemmonitor
+plasma-systemmonitor
