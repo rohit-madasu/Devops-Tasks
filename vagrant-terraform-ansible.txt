@@ -1,1 +1,7 @@
+sudo pacman -S virtualbox
+==> select option 1 of dkms for stock kernel normally , option 2 of arch host for lts and zen kernel 
+
+sudo pacman -S linux linux-headers
+
+
 pacman -S vagrant
