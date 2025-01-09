@@ -72,3 +72,32 @@ if ! pgrep -x "dhclient" > /dev/null; then
 fi
 #####################################################################################
 
+==> Removing the Touch Screen Device script of  /home/rohit/Public/touch_remove.sh  is :-
+[root@Kurukshetra twm]# cat /home/rohit/Public/touch_remove.sh 
+#!/bin/bash
+
+# Define the device name
+device_name="eGalax Inc. eGalaxTouch EXC3104-1324-07.00.00"
+
+# Find the device ID using xinput list
+device_id=$(xinput list | grep "$device_name" | awk -F'id=' '{print $2}' | awk '{print $1}')
+
+# Disable the device if the ID is found
+if [[ -n "$device_id" ]]; then
+    echo "Disabling device: $device_name with ID: $device_id"
+    xinput disable "$device_id"
+else
+    echo "Device not found: $device_name"
+fi
+
+
+
+
+
+==> keep the below lines in the file /etc/X11/xinit/xinitrc  :- 
+
+# Run the touch_remove.sh script
+/home/rohit/Public/touch_remove.sh &
+
+#####################################################################################
+
