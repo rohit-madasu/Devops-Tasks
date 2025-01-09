@@ -38,3 +38,37 @@ docker-desktop
 
 sudo pacman -S plasma-systemmonitor
 plasma-systemmonitor
+
+#####################################################################################
+
+==> Removing the Password for rohit user :-
+groups rohit
+sudo gpasswd -d rohit wheel
+sudo mv /etc/sudoers.d/10-installer /etc/sudoers.d/10-installer.bak
+==> Then edit the visudo , i.e , /etc/sudoers 
+#####################################################################################
+
+==> Adding the eGalaxtouch disable script 
+
+
+==> enabling the dhclient command 
+in ~/.bashrc , keep as :-
+
+[rohit@Kurukshetra ~]$ cat ~/.bashrc
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+PS1='[\u@\h \W]\$ '
+
+# Run dhclient for wlan0 if it's not already running
+if ! pgrep -x "dhclient" > /dev/null; then
+    sudo dhclient -4 wlan0
+fi
+#####################################################################################
+
