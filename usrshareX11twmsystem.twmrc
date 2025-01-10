@@ -1,0 +1,91 @@
+#
+# Default twm configuration file - Optimized for usability and accessibility
+#
+
+NoGrabServer
+RestartPreviousState
+DecorateTransients
+
+# Improved font readability with consistent sizes
+TitleFont "-adobe-helvetica-bold-r-normal--*-140-*-*-*-*-*-*"
+ResizeFont "-adobe-helvetica-bold-r-normal--*-140-*-*-*-*-*-*"
+MenuFont "-adobe-helvetica-bold-r-normal--*-140-*-*-*-*-*-*"
+IconFont "-adobe-helvetica-bold-r-normal--*-120-*-*-*-*-*-*"
+IconManagerFont "-adobe-helvetica-bold-r-normal--*-120-*-*-*"
+# Uncomment if custom border widths are desired
+# ClientBorderWidth
+
+# Enhanced color scheme for high contrast
+Color
+{
+    BorderColor "steelblue"
+    DefaultBackground "rgb:1a/1a/2e"
+    DefaultForeground "white"
+    TitleBackground "rgb:1a/1a/2e"
+    TitleForeground "white"
+    MenuBackground "rgb:1a/1a/2e"
+    MenuForeground "white"
+    MenuBorderColor "steelblue"
+    MenuTitleBackground "rgb:3d/3d/5c"
+    MenuTitleForeground "white"
+    IconBackground "rgb:1a/1a/2e"
+    IconForeground "white"
+    IconBorderColor "white"
+    IconManagerBackground "rgb:1a/1a/2e"
+    IconManagerForeground "white"
+}
+
+#
+# Define motion-based functions with intuitive naming
+#
+MoveDelta 3
+Function "move-or-lower" { f.move f.deltastop f.lower }
+Function "move-or-raise" { f.move f.deltastop f.raise }
+Function "move-or-iconify" { f.move f.deltastop f.iconify }
+
+#
+# Improved bindings for efficiency and accessibility
+#
+Button1 = : root : f.menu "defops"
+
+Button1 = m : window|icon : f.function "move-or-lower"
+Button2 = m : window|icon : f.iconify
+Button3 = m : window|icon : f.function "move-or-raise"
+
+Button1 = : title : f.function "move-or-raise"
+Button2 = : title : f.raiselower
+
+Button1 = : icon : f.function "move-or-iconify"
+Button2 = : icon : f.iconify
+
+Button1 = : iconmgr : f.iconify
+Button2 = : iconmgr : f.iconify
+
+#
+# Retained menu with slight optimization in spacing
+#
+menu "defops"
+{
+    "Twm"                 f.title
+    "Raise"               f.raise
+    "Lower"               f.lower
+    ""                    f.nop
+    "Focus"               f.focus
+    "Unfocus"             f.unfocus
+    "Show Iconmgr"        f.showiconmgr
+    "Hide Iconmgr"        f.hideiconmgr
+    ""                    f.nop
+    "Xterm"               f.exec "exec xterm &"
+    "VS Code"             f.exec "exec code &"
+    "VS Code (Root)"      f.exec "exec sudo code --no-sandbox &"
+    "Thunar"              f.exec "exec thunar &"
+    "Bluetooth Manager"   f.exec "exec blueman-manager &"
+    "Audio Control"       f.exec "exec pavucontrol &"
+    "Network Manager"     f.exec "exec xterm -e nmtui &"
+    ""                    f.nop
+    "Kill"                f.destroy
+    "Delete"              f.delete
+    ""                    f.nop
+    "Restart"             f.restart
+    "Exit"                f.quit
+}
