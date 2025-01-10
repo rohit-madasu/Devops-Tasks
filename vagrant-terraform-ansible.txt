@@ -101,3 +101,16 @@ fi
 
 #####################################################################################
 pacman -S vlc thunar nwg-drawer flameshot
+
+putty , thunar , vlc , flameshot , nwg-drawer
+
+##################################################################################
+Configure NetworkManager to Use IWD as the Backend
+
+sudo nano /etc/NetworkManager/conf.d/90-iwd.conf
+
+[device]
+wifi.backend=iwd
+
+sudo systemctl restart NetworkManager
+##################################################################################
