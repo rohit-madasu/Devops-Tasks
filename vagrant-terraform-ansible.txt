@@ -100,4 +100,4 @@ fi
 /home/rohit/Public/touch_remove.sh &
 
 #####################################################################################
-
+pacman -S vlc thunar nwg-drawer flameshot
