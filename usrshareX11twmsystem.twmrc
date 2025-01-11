@@ -75,17 +75,18 @@ menu "defops"
     "Show Iconmgr"        f.showiconmgr
     "Hide Iconmgr"        f.hideiconmgr
     ""                    f.nop
-    "Xterm"               f.exec "exec xterm &"
+    "Screenshot"          f.exec "exec flameshot gui &"
     "VS Code"             f.exec "exec code &"
     "VS Code (Root)"      f.exec "exec sudo code --no-sandbox &"
     "Thunar"              f.exec "exec thunar &"
     "Bluetooth Manager"   f.exec "exec blueman-manager &"
     "Audio Control"       f.exec "exec pavucontrol &"
     "Network Manager"     f.exec "exec xterm -e nmtui &"
+    "Apps"                f.exec "exec nwg-drawer &"
+    "Firefox"             f.exec "exec firefox &"
     ""                    f.nop
     "Kill"                f.destroy
     "Delete"              f.delete
     ""                    f.nop
     "Restart"             f.restart
-    "Exit"                f.quit
 }
