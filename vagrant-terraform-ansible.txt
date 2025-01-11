@@ -114,3 +114,8 @@ wifi.backend=iwd
 
 sudo systemctl restart NetworkManager
 ##################################################################################
+
+git clone https://github.com/sagb/alttab.git
+cd alttab
+./configure && sudo make install
+##################################################################################
