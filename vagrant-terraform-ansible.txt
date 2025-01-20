@@ -117,7 +117,7 @@ fi
 #####################################################################################
 pacman -S vlc thunar nwg-drawer flameshot
 
-putty , thunar , vlc , flameshot , nwg-drawer
+thunar , vlc , flameshot , nwg-drawer , obs-studio , openshot
 
 ##################################################################################
 Configure NetworkManager to Use IWD as the Backend
