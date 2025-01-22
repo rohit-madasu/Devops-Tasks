@@ -134,3 +134,61 @@ git clone https://github.com/sagb/alttab.git
 cd alttab
 ./configure && sudo make install
 ##################################################################################
+
+Increase and decrease brightness :- 
+
+Steps to Change the Brightness:
+
+    Check the Current Brightness:
+
+cat /sys/class/backlight/intel_backlight/brightness
+
+Set a New Brightness Value: Use echo to write a new value to the brightness file. The value must be between 0 (minimum) and 7500 (maximum).
+
+Example to set brightness to 50%:
+
+echo 3750 | sudo tee /sys/class/backlight/intel_backlight/brightness
+
+Test Increment/Decrement: To decrease brightness by 10% (750 units):
+
+current=$(cat /sys/class/backlight/intel_backlight/brightness)
+new=$(($current - 750))
+if [ $new -lt 0 ]; then new=0; fi
+echo $new | sudo tee /sys/class/backlight/intel_backlight/brightness
+
+To increase brightness by 10%:
+
+    current=$(cat /sys/class/backlight/intel_backlight/brightness)
+    new=$(($current + 750))
+    max=$(cat /sys/class/backlight/intel_backlight/max_brightness)
+    if [ $new -gt $max ]; then new=$max; fi
+    echo $new | sudo tee /sys/class/backlight/intel_backlight/brightness
+
+Automating Brightness Adjustment:
+
+You can create simple shell scripts or aliases to adjust brightness easily.
+Example Script for Decreasing Brightness:
+
+#!/bin/bash
+current=$(cat /sys/class/backlight/intel_backlight/brightness)
+new=$(($current - 750))
+if [ $new -lt 0 ]; then new=0; fi
+echo $new | sudo tee /sys/class/backlight/intel_backlight/brightness
+
+Example Script for Increasing Brightness:
+
+#!/bin/bash
+current=$(cat /sys/class/backlight/intel_backlight/brightness)
+new=$(($current + 750))
+max=$(cat /sys/class/backlight/intel_backlight/max_brightness)
+if [ $new -gt $max ]; then new=$max; fi
+echo $new | sudo tee /sys/class/backlight/intel_backlight/brightness
+
+Save these scripts in /usr/local/bin (e.g., increase_brightness and decrease_brightness) and make them executable:
+
+sudo chmod +x /usr/local/bin/increase_brightness
+sudo chmod +x /usr/local/bin/decrease_brightness
+
+You can now run increase_brightness or decrease_brightness to adjust brightness.
+
+##################################################################################
