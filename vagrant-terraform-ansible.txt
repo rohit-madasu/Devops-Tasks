@@ -192,3 +192,60 @@ sudo chmod +x /usr/local/bin/decrease_brightness
 You can now run increase_brightness or decrease_brightness to adjust brightness.
 
 ##################################################################################
+Solutions
+A. Use xrandr Instead (Alternative to xbacklight)
+
+xrandr can adjust brightness by modifying the gamma settings:
+
+xrandr --output <display_name> --brightness <value>
+
+Replace <display_name> with your output name (e.g., eDP-1):
+
+xrandr --output eDP-1 --brightness 0.8
+
+    1.0: Full brightness.
+    0.5: 50% brightness.
+
+To find your display name:
+
+xrandr --listmonitors
+
+B. Use brightnessctl
+
+brightnessctl interacts with /sys/class/backlight and works in more cases:
+
+    Install:
+
+sudo pacman -S brightnessctl
+
+Adjust brightness:
+
+    brightnessctl set 50%
+
+C. Use the Intel Driver
+
+If you want to try the Intel driver:
+
+    Install the driver:
+
+sudo pacman -S xf86-video-intel
+
+Create a config file:
+
+sudo nano /etc/X11/xorg.conf.d/20-intel.conf
+
+Add the following:
+
+    Section "Device"
+        Identifier  "Intel Graphics"
+        Driver      "intel"
+        Option      "Backlight" "intel_backlight"
+    EndSection
+
+    Reboot the system.
+
+D. Directly Adjust /sys/class/backlight
+
+If all else fails, directly modify the brightness value as explained earlier.
+
+##################################################################################
