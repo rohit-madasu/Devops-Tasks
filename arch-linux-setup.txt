@@ -5,3 +5,11 @@ station wlan0 show
 
 archinstall
 
+sudo pacman -S xorg xorg-xinit xterm openbox vim git
+sudo pacman -S chromium code
+sudo pacman -S flameshot thunar nwg-drawer libre-office-fresh pulseaudio pavucontrol bluez bluez-utils blueman
+
+==========================================================================================================
+
+docker , docker-desktop , cpuinfo , eksctl , aws cli , 
+
