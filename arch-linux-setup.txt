@@ -1,0 +1,7 @@
+iwctl
+station wlan get-networks
+station wlan0 connect Rohit_5G
+station wlan0 show
+
+archinstall
+
