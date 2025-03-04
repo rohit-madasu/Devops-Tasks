@@ -6,9 +6,15 @@ station wlan0 show
 archinstall
 
 sudo pacman -S xorg xorg-xinit xterm openbox vim git
-sudo pacman -S chromium code
+sudo pacman -S chromium code unzip zip cpupower gnome-system-monitor docker
 sudo pacman -S flameshot thunar nwg-drawer libre-office-fresh pulseaudio pavucontrol bluez bluez-utils blueman
 
+
+git clone https://aur.archlinux.org/yay-bin.git
+cd yay-bin
+makepkg -si
+
+yay -S brave-bin
 
 
 #####################################################################################
@@ -40,11 +46,83 @@ fi
 # Run the touch_remove.sh script
 /home/rohit/Public/touch_remove.sh &
 
+# Improve the performance of CPU's
+sudo cpupower frequency-set -g performance &
+
 #####################################################################################
 
-keep these in the file 
+keep these in the file /etc/xdg/openbox/menu.xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE openbox_menu SYSTEM "menu.dtd">
+<openbox_menu>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE openbox_menu SYSTEM "menu.dtd">
+<openbox_menu>
+    <menu id="root-menu" label="Openbox Menu">
+        <item label="Screenshot">
+            <action name="Execute">
+                <command>flameshot gui &</command>
+            </action>
+        </item>
+        <item label="VS Code">
+            <action name="Execute">
+                <command>code &</command>
+            </action>
+        </item>
+        <item label="VS Code (Root)">
+            <action name="Execute">
+                <command>sudo code --no-sandbox &</command>
+            </action>
+        </item>
+        <item label="Thunar">
+            <action name="Execute">
+                <command>thunar &</command>
+            </action>
+        </item>
+        <item label="Bluetooth Manager">
+            <action name="Execute">
+                <command>blueman-manager &</command>
+            </action>
+        </item>
+        <item label="Audio Control">
+            <action name="Execute">
+                <command>pavucontrol &</command>
+            </action>
+        </item>
+        <item label="Network Manager">
+            <action name="Execute">
+                <command>xterm -e nmtui &</command>
+            </action>
+        </item>
+        <item label="Apps">
+            <action name="Execute">
+                <command>nwg-drawer &</command>
+            </action>
+        </item>
+        <item label="LibreOffice Writer">
+            <action name="Execute">
+                <command>libreoffice --writer &</command>
+            </action>
+        </item>
+        <item label="GNOME System Monitor">
+            <action name="Execute">
+                <command>gnome-system-monitor &</command>
+            </action>
+        </item>
+        <item label="Brave Browser">
+            <action name="Execute">
+                <command>brave-browser &</command>
+            </action>
+        </item>
+    </menu>
+</openbox_menu>
+
+=========================================================================================================
+
+Xterm change :- change the file as 
 
 
 ==========================================================================================================
 
-docker , docker-desktop , cpuinfo , eksctl , aws cli , vmware-workstation 
+docker-desktop , eksctl , aws cli , vmware-workstation 
