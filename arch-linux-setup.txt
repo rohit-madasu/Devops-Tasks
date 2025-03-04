@@ -6,7 +6,7 @@ station wlan0 show
 archinstall
 
 sudo pacman -S xorg xorg-xinit xterm openbox vim git
-sudo pacman -S chromium code unzip zip cpupower gnome-system-monitor docker
+sudo pacman -S chromium code unzip zip cpupower gnome-system-monitor docker reflector
 sudo pacman -S flameshot thunar nwg-drawer libre-office-fresh pulseaudio pavucontrol bluez bluez-utils blueman
 
 
@@ -14,7 +14,7 @@ git clone https://aur.archlinux.org/yay-bin.git
 cd yay-bin
 makepkg -si
 
-yay -S brave-bin
+yay -S brave-bin docker-desktop
 
 
 #####################################################################################
@@ -120,9 +120,88 @@ keep these in the file /etc/xdg/openbox/menu.xml
 
 =========================================================================================================
 
-Xterm change :- change the file as 
+Xterm change :- change the file /usr/share/X11/appdefaults/XTerm as 
 
+! XTerm Configuration - Fully Functional and Stylish
+
+! Font and Size
+XTerm*faceName: Monospace
+XTerm*faceSize: 16
+
+! Colors (Green on Black "Hacker Style")
+XTerm*background: black
+XTerm*foreground: green
+XTerm*cursorColor: green
+XTerm*highlightColor: green
+XTerm*highlightTextColor: black
+
+! Scrollbar
+XTerm*scrollBar: true
+XTerm*scrollBarRight: true
+XTerm*saveLines: 5000  ! Increase saved lines for better scrolling
+
+! Mouse Support
+XTerm*pointerMode: 1          ! Enable mouse support for selection
+XTerm*selectToClipboard: true ! Automatically copy text selection to clipboard
+
+! Clipboard Options
+XTerm*VT100.translations: #override \
+  Shift <KeyPress> Insert: insert-selection(CLIPBOARD) \n\
+  Shift <KeyPress> C: copy-selection(CLIPBOARD) \n\
+  Shift <KeyPress> V: insert-selection(CLIPBOARD) \n\
+  Ctrl <KeyPress> V: insert-selection(PRIMARY)
+
+! UTF-8 Support
+XTerm*utf8: 2
+XTerm*utf8Fonts: true
+
+! Enable Clickable URLs
+XTerm*onClickURL: true
+XTerm*charClass: 33:48,37:48,45-47:48,64:48,126:48
+
+! Cursor and Keyboard Behavior
+XTerm*cursorBlink: true        ! Enable cursor blinking
+XTerm*cursorUnderline: true    ! Use an underline cursor
+XTerm*metaSendsEscape: true    ! Enable Alt+<key> combinations
+XTerm*eightBitInput: false     ! Disable 8-bit input for better compatibility
+XTerm*backarrowKey: true       ! Make Backspace act like it should
+
+! Bell Behavior
+XTerm*visualBell: true         ! Visual bell instead of audible
+XTerm*allowBell: true
+
+! Title Bar and Icon Name
+XTerm*title: XTerm
+XTerm*iconName: XTerm
+
+! Enhanced Text Rendering
+XTerm*boldColors: true
+XTerm*renderFont: true
+XTerm*boldMode: true
+XTerm*allowBoldFonts: true
+
+! Miscellaneous
+XTerm*dynamicColors: true       ! Allow dynamic color changes
+XTerm*cutNewline: false         ! Prevent newline cutting when copying text
+XTerm*cutToBeginningOfLine: false
+XTerm*trimSelection: true       ! Trim whitespace from copied selections
+XTerm*allowWindowOps: true      ! Allow window management via escape sequences
+XTerm*altIsNotMeta: true        ! Improve compatibility with Alt key
+
+! Key Bindings for Copy/Paste (Shift + Insert, Shift + C, Shift + V)
+XTerm*VT100.translations: #override \
+  Shift <KeyPress> Insert: insert-selection(CLIPBOARD) \n\
+  Shift <KeyPress> C: copy-selection(CLIPBOARD) \n\
+  Shift <KeyPress> V: insert-selection(CLIPBOARD)
 
 ==========================================================================================================
 
-docker-desktop , eksctl , aws cli , vmware-workstation 
+ eksctl , aws cli , vmware-workstation 
+
+==========================================================================================================
+
+Some imp commands :- 
+
+sudo reflector --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
+
+cpupower frequency-info | grep "governor"
