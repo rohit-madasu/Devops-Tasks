@@ -120,6 +120,18 @@ keep these in the file /etc/xdg/openbox/menu.xml
 
 =========================================================================================================
 
+Changing the Swappiness :- check current swappiness with cat /proc/sys/vm/swappiness
+
+sudo nano /etc/sysctl.d/99-sysctl.conf
+Add just this below line :-
+vm.swappiness=10
+
+Then save and run "sudo sysctl --system"  to apply the change.
+=========================================================================================================
+
+
+
+=========================================================================================================
 Xterm change :- change the file /usr/share/X11/appdefaults/XTerm as 
 
 ! XTerm Configuration - Fully Functional and Stylish
@@ -205,3 +217,10 @@ Some imp commands :-
 sudo reflector --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
 
 cpupower frequency-info | grep "governor"
+
+==========================================================================================================
+Some optimizations :- 
+
+sudo systemctl disable --now systemd-networkd-wait-online.service
+
+sudo systemctl disable remote-fs.target
