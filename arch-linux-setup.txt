@@ -129,6 +129,7 @@ vm.swappiness=10
 Then save and run "sudo sysctl --system"  to apply the change.
 =========================================================================================================
 
+Openbox file change Desktops to 1 , file = /etc/xdg/openbox/menu.xml 
 
 
 =========================================================================================================
