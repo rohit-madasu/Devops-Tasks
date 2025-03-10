@@ -58,67 +58,65 @@ keep these in the file /etc/xdg/openbox/menu.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE openbox_menu SYSTEM "menu.dtd">
 <openbox_menu>
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE openbox_menu SYSTEM "menu.dtd">
-<openbox_menu>
     <menu id="root-menu" label="Openbox Menu">
         <item label="Screenshot">
             <action name="Execute">
-                <command>flameshot gui &</command>
+                <command>flameshot gui &amp;</command>
             </action>
         </item>
         <item label="VS Code">
             <action name="Execute">
-                <command>code &</command>
+                <command>code &amp;</command>
             </action>
         </item>
         <item label="VS Code (Root)">
             <action name="Execute">
-                <command>sudo code --no-sandbox &</command>
+                <command>sudo code --no-sandbox &amp;</command>
             </action>
         </item>
         <item label="Thunar">
             <action name="Execute">
-                <command>thunar &</command>
+                <command>thunar &amp;</command>
             </action>
         </item>
         <item label="Bluetooth Manager">
             <action name="Execute">
-                <command>blueman-manager &</command>
+                <command>blueman-manager &amp;</command>
             </action>
         </item>
         <item label="Audio Control">
             <action name="Execute">
-                <command>pavucontrol &</command>
+                <command>pavucontrol &amp;</command>
             </action>
         </item>
         <item label="Network Manager">
             <action name="Execute">
-                <command>xterm -e nmtui &</command>
+                <command>xterm -e nmtui &amp;</command>
             </action>
         </item>
         <item label="Apps">
             <action name="Execute">
-                <command>nwg-drawer &</command>
+                <command>nwg-drawer &amp;</command>
             </action>
         </item>
         <item label="LibreOffice Writer">
             <action name="Execute">
-                <command>libreoffice --writer &</command>
+                <command>libreoffice --writer &amp;</command>
             </action>
         </item>
         <item label="GNOME System Monitor">
             <action name="Execute">
-                <command>gnome-system-monitor &</command>
+                <command>gnome-system-monitor &amp;</command>
             </action>
         </item>
         <item label="Brave Browser">
             <action name="Execute">
-                <command>brave-browser &</command>
+                <command>brave-browser &amp;</command>
             </action>
         </item>
     </menu>
 </openbox_menu>
+
 
 =========================================================================================================
 
