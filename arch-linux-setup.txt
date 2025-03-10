@@ -53,7 +53,7 @@ sudo cpupower frequency-set -g performance &
 
 #####################################################################################
 
-keep these in the file /etc/xdg/openbox/menu.xml
+keep these in the file /etc/xdg/openbox/menu.xml and then run "openbox --restart"
 
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE openbox_menu SYSTEM "menu.dtd">
@@ -66,12 +66,12 @@ keep these in the file /etc/xdg/openbox/menu.xml
         </item>
         <item label="VS Code">
             <action name="Execute">
-                <command>code &amp;</command>
+                <command>sh -c 'code &amp;'</command>
             </action>
         </item>
         <item label="VS Code (Root)">
             <action name="Execute">
-                <command>sudo code --no-sandbox &amp;</command>
+                <command>sh -c 'sudo code --no-sandbox &amp;'</command>
             </action>
         </item>
         <item label="Thunar">
@@ -111,7 +111,7 @@ keep these in the file /etc/xdg/openbox/menu.xml
         </item>
         <item label="Brave Browser">
             <action name="Execute">
-                <command>brave-browser &amp;</command>
+                <command>brave &amp;</command>
             </action>
         </item>
     </menu>
