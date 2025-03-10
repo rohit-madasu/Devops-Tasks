@@ -61,57 +61,57 @@ keep these in the file /etc/xdg/openbox/menu.xml and then run "openbox --restart
     <menu id="root-menu" label="Openbox Menu">
         <item label="Screenshot">
             <action name="Execute">
-                <command>flameshot gui &amp;</command>
+                <command>sh -c 'flameshot gui &'</command>
             </action>
         </item>
         <item label="VS Code">
             <action name="Execute">
-                <command>sh -c 'code &amp;'</command>
+                <command>sh -c 'code &'</command>
             </action>
         </item>
         <item label="VS Code (Root)">
             <action name="Execute">
-                <command>sh -c 'sudo code --no-sandbox &amp;'</command>
+                <command>sh -c 'sudo code --no-sandbox &'</command>
             </action>
         </item>
         <item label="Thunar">
             <action name="Execute">
-                <command>thunar &amp;</command>
+                <command>sh -c 'thunar &'</command>
             </action>
         </item>
         <item label="Bluetooth Manager">
             <action name="Execute">
-                <command>blueman-manager &amp;</command>
+                <command>sh -c 'blueman-manager &'</command>
             </action>
         </item>
         <item label="Audio Control">
             <action name="Execute">
-                <command>pavucontrol &amp;</command>
+                <command>sh -c 'pavucontrol &'</command>
             </action>
         </item>
         <item label="Network Manager">
             <action name="Execute">
-                <command>xterm -e nmtui &amp;</command>
+                <command>sh -c 'xterm -e nmtui &'</command>
             </action>
         </item>
         <item label="Apps">
             <action name="Execute">
-                <command>nwg-drawer &amp;</command>
+                <command>sh -c 'nwg-drawer &'</command>
             </action>
         </item>
         <item label="LibreOffice Writer">
             <action name="Execute">
-                <command>libreoffice --writer &amp;</command>
+                <command>sh -c 'libreoffice --writer &'</command>
             </action>
         </item>
         <item label="GNOME System Monitor">
             <action name="Execute">
-                <command>gnome-system-monitor &amp;</command>
+                <command>sh -c 'gnome-system-monitor &'</command>
             </action>
         </item>
         <item label="Brave Browser">
             <action name="Execute">
-                <command>brave &amp;</command>
+                <command>sh -c 'brave &'</command>
             </action>
         </item>
     </menu>
