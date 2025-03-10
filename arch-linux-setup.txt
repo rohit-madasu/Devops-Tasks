@@ -7,9 +7,11 @@ archinstall
 
 sudo pacman -S xorg xorg-xinit xterm openbox vim git
 sudo pacman -S chromium code unzip zip cpupower gnome-system-monitor docker reflector
-sudo pacman -S flameshot thunar nwg-drawer libre-office-fresh pulseaudio pavucontrol bluez bluez-utils blueman
+sudo pacman -S flameshot thunar nwg-drawer libreoffice-fresh pulseaudio pavucontrol bluez bluez-utils blueman
 
+systemctl --user enable pulseaudio.service
 
+cd /tmp
 git clone https://aur.archlinux.org/yay-bin.git
 cd yay-bin
 makepkg -si
@@ -209,6 +211,8 @@ XTerm*VT100.translations: #override \
 ==========================================================================================================
 
  eksctl , aws cli , vmware-workstation 
+
+ sudo pacman -S terraform ansible virtualbox 
 
 ==========================================================================================================
 
