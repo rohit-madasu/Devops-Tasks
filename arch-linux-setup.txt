@@ -16,7 +16,7 @@ git clone https://aur.archlinux.org/yay-bin.git
 cd yay-bin
 makepkg -si
 
-yay -S brave-bin docker-desktop iwgtk
+yay -S brave-bin docker-desktop iwgtk simplescreenrecorder
 
 
 #####################################################################################
@@ -227,3 +227,5 @@ Some optimizations :-
 sudo systemctl disable --now systemd-networkd-wait-online.service
 
 sudo systemctl disable remote-fs.target
+
+xrandr --output eDP-1 --brightness 0.8
