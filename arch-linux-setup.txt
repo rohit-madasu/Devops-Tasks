@@ -7,7 +7,7 @@ archinstall
 
 sudo pacman -S xorg xorg-xinit xterm openbox vim git
 sudo pacman -S chromium code unzip zip cpupower gnome-system-monitor docker reflector
-sudo pacman -S flameshot thunar nwg-drawer libreoffice-fresh pulseaudio pavucontrol bluez bluez-utils blueman
+sudo pacman -S flameshot thunar nwg-drawer libreoffice-fresh pulseaudio pulseaudio-bluetooth pavucontrol bluez bluez-utils blueman 
 
 systemctl --user enable pulseaudio.service
 
